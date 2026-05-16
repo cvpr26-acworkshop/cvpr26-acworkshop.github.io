@@ -354,6 +354,54 @@
       margin-bottom: 8px;
     }
 
+    /* ---------- lightning talks ---------- */
+    .talks-session + .talks-session { margin-top: 56px; }
+    .talks-heading {
+      font-family: var(--mono);
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 16px;
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+    }
+    .talks-time { color: var(--muted); font-size: 15px; }
+    .talks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .talks li {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 10px 0;
+      border-top: 1px solid var(--rule);
+    }
+    body.show-talk-titles .talks li {
+      grid-template-columns: 220px 1fr;
+      column-gap: 32px;
+      align-items: baseline;
+    }
+    .talk-name {
+      font-family: var(--mono);
+      color: var(--ink);
+      font-size: 15px;
+    }
+    .talk-title {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      display: none;
+    }
+    body.show-talk-titles .talk-title { display: block; }
+    @media (max-width: 640px) {
+      body.show-talk-titles .talks li {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+      }
+    }
+
     /* ---------- footer ---------- */
     footer {
       padding: 40px 32px 60px;
@@ -384,7 +432,7 @@
     footer a:hover { color: var(--ink); text-decoration-color: var(--accent); }
   </style>
 </head>
-<body>
+<body class="show-talk-titles">
 
   <nav class="nav">
     <div class="nav-inner">
@@ -422,8 +470,8 @@
         <div class="time">09:30</div> <div class="item">Town Hall</div>
         <div class="time">10:30</div> <div class="item break">Coffee break</div>
         <div class="time">11:00</div> <div class="item">Lightning talks</div>
-        <div class="time">12:00</div> <div class="item">Panel discussion · Past and future CVPR / ICCV program committees</div>
-        <div class="time">13:00</div> <div class="item break">Lunch</div>
+        <div class="time">12:15</div> <div class="item break">Lunch</div>
+        <div class="time">13:00</div> <div class="item">Panel discussion · Past and future CVPR / ICCV program committees</div>
         <div class="time">14:30</div> <div class="item">Lightning talks (continued)</div>
         <div class="time">16:00</div> <div class="item break">Coffee break</div>
         <div class="time">16:30</div> <div class="item">Town Hall</div>
@@ -437,9 +485,44 @@
     <div class="wrap">
       <div class="section-label">Lightning Talks</div>
       <h2>A series of short research talks.</h2>
-      <div class="callout">
-        <div class="label">Program</div>
-        Details will be announced closer to the date.
+
+      <div class="talks-session">
+        <h3 class="talks-heading"><span class="talks-time">11:00</span> Morning Session</h3>
+        <ul class="talks">
+          <li><span class="talk-name">Michael Ryoo</span><span class="talk-title">Motion World Models for Robot Control</span></li>
+          <li><span class="talk-name">Davide Moltisanti</span><span class="talk-title">Video understanding: from fine-grained recognition to interpretable approaches</span></li>
+          <li><span class="talk-name">Roni Sengupta</span><span class="talk-title">From Pixels to Physics: Understanding the Physical World from Visual Data</span></li>
+          <li><span class="talk-name">Liwei Wang</span><span class="talk-title">Learning from Videos for 3D Spatial Understanding and Interaction</span></li>
+          <li><span class="talk-name">Eunbyung Park</span><span class="talk-title">Scalable Feed-forward 3D Gaussian Splatting</span></li>
+          <li><span class="talk-name">Huaizu Jiang</span><span class="talk-title">UniCorrn: Unified Correspondence Transformer Across 2D and 3D</span></li>
+          <li><span class="talk-name">Adam Kortylewski</span><span class="talk-title">From 2D Representation Learning to Understanding the 3D World</span></li>
+          <li><span class="talk-name">Sagie Benaim</span><span class="talk-title">3D-Aware Latent Tokens for 3D Reconstruction, Generation, and Understanding</span></li>
+          <li><span class="talk-name">Ismini Lourentzou</span><span class="talk-title">Generative Foundations for Embodied AI</span></li>
+          <li><span class="talk-name">Guy Gilboa</span><span class="talk-title">How to Encode World Knowledge?</span></li>
+          <li><span class="talk-name">Anand Bhattad</span><span class="talk-title">Principia: Do Video Models Understand Physical Reality? A Relational Evaluation</span></li>
+        </ul>
+      </div>
+
+      <div class="talks-session">
+        <h3 class="talks-heading"><span class="talks-time">14:30</span> Afternoon Session</h3>
+        <ul class="talks">
+          <li><span class="talk-name">Wayne Wu</span><span class="talk-title">From Scaling up to Scaling out: Reality World Simulators for Physical AI</span></li>
+          <li><span class="talk-name">Shubham Tulsiani</span><span class="talk-title">Do we need geometry for 3D, or 3D for robotics?</span></li>
+          <li><span class="talk-name">Liang Zheng</span><span class="talk-title">T2I Pretraining: Problems, What's working, and What's next</span></li>
+          <li><span class="talk-name">Raymond A. Yeh</span><span class="talk-title">Computer Vision Beyond Task Performance</span></li>
+          <li><span class="talk-name">Ziwei Liu</span><span class="talk-title">From Egocentric Perception to Embodied Intelligence: Building the World in First Person</span></li>
+          <li><span class="talk-name">Andre Araujo</span><span class="talk-title">TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment</span></li>
+          <li><span class="talk-name">Renjie Liao</span><span class="talk-title">Flowing Through Time: Advancing Motion Forecasting and Training-Free Visual Editing</span></li>
+          <li><span class="talk-name">Liangyan Gui</span><span class="talk-title">Towards Scalable and Autonomous Humanoid Whole-Body Loco-Manipulation</span></li>
+          <li><span class="talk-name">Stephan Alaniz</span><span class="talk-title">Generative Explainable AI</span></li>
+          <li><span class="talk-name">Xiangyu Yue</span><span class="talk-title">OneThinker: All-in-one Reasoning Model for Image and Video</span></li>
+          <li><span class="talk-name">Zhuang Liu</span><span class="talk-title">Building Fully Open Multimodal Foundation Models: From Reasoning to Generation</span></li>
+          <li><span class="talk-name">Cherry (Nanxuan) Zhao</span><span class="talk-title">Unified controllable content creation models</span></li>
+          <li><span class="talk-name">Mohamed Elhoseiny</span><span class="talk-title">Towards Scalable and Structured Understanding in Video LLMs</span></li>
+          <li><span class="talk-name">Deepti Ghadiyaram</span><span class="talk-title">Robust and Efficient Multimodal Intelligence</span></li>
+          <li><span class="talk-name">Or Litany</span><span class="talk-title">Bending Generative Models Without Retraining</span></li>
+          <li><span class="talk-name">Chris Thomas</span><span class="talk-title">Structuring Meaning and Model Behavior for Trustworthy Multimodal AI</span></li>
+        </ul>
       </div>
     </div>
   </section>
