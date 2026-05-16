@@ -238,6 +238,15 @@
     .schedule .break {
       color: var(--muted);
     }
+    .schedule .item a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-underline-offset: 3px;
+    }
+    .schedule .item a:hover {
+      text-decoration-color: var(--accent);
+    }
     @media (max-width: 640px) {
       .schedule { grid-template-columns: 80px 1fr; column-gap: 20px; }
     }
@@ -355,6 +364,7 @@
     }
 
     /* ---------- lightning talks ---------- */
+    .talks-session { scroll-margin-top: 80px; }
     .talks-session + .talks-session { margin-top: 56px; }
     .talks-heading {
       font-family: var(--mono);
@@ -469,10 +479,10 @@
         <div class="time">09:00</div> <div class="item">Introduction</div>
         <div class="time">09:30</div> <div class="item">Town Hall</div>
         <div class="time">10:30</div> <div class="item break">Coffee break</div>
-        <div class="time">11:00</div> <div class="item">Lightning talks</div>
+        <div class="time">11:00</div> <div class="item"><a href="#talks-am">Lightning talks</a></div>
         <div class="time">12:15</div> <div class="item break">Lunch</div>
         <div class="time">13:00</div> <div class="item">Panel discussion · Past and future CVPR / ICCV program committees</div>
-        <div class="time">14:30</div> <div class="item">Lightning talks (continued)</div>
+        <div class="time">14:30</div> <div class="item"><a href="#talks-pm">Lightning talks (continued)</a></div>
         <div class="time">16:00</div> <div class="item break">Coffee break</div>
         <div class="time">16:30</div> <div class="item">Town Hall</div>
         <div class="time">17:30</div> <div class="item">Poster session</div>
@@ -486,7 +496,7 @@
       <div class="section-label">Lightning Talks</div>
       <h2>A series of short research talks.</h2>
 
-      <div class="talks-session">
+      <div class="talks-session" id="talks-am">
         <h3 class="talks-heading"><span class="talks-time">11:00</span> Morning Session</h3>
         <ul class="talks">
           <li><span class="talk-name">Michael Ryoo</span><span class="talk-title">Motion World Models for Robot Control</span></li>
@@ -503,7 +513,7 @@
         </ul>
       </div>
 
-      <div class="talks-session">
+      <div class="talks-session" id="talks-pm">
         <h3 class="talks-heading"><span class="talks-time">14:30</span> Afternoon Session</h3>
         <ul class="talks">
           <li><span class="talk-name">Wayne Wu</span><span class="talk-title">From Scaling up to Scaling out: Reality World Simulators for Physical AI</span></li>
